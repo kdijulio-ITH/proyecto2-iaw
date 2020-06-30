@@ -17,64 +17,57 @@
 
                                 <div class="control-group form-group">
                                     <div class="controls">
-
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
                                         <input type="hidden" name="usuario" value="{{ Auth::user() }}">
+                                        <div class="form-group">
+                                            <label class="label">Nombre</label>
+                                            <input required autocomplete="off" name="nombre" class="form-control"
+                                                   type="text" placeholder="Nombre" maxlength="255" data-validation-required-message="Por favor introduzca nombre del producto.">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label">Descripción</label>
+                                            <input required autocomplete="off" name="descripcion" class="form-control"
+                                                   type="text" placeholder="Descripción">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label">Creador</label>
+                                            <input required autocomplete="off" name="creador" class="form-control"
+                                                   type="text" placeholder="Creador">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label">Imagen del producto</label>
+                                            <input type="file" required name="imagen" class="form-control" placeholder="imagen" >
+                                        </div>
 
-                                    </div>
-                                </div>
+                                        <div class="form-group">
+                                            <label class="label">Stock</label>
+                                           <div class="table-responsive">
+                                                <table class="table table-bordered table-striped" id="user_table">
+                                                     <thead>
+                                                      <tr>
+                                                          <th width="35%">Contenido</th>
+                                                          <th width="35%">Precio</th>
+                                                          <th width="30%">Stock</th>
+                                                      </tr>
+                                                     </thead>
+                                                     <tbody>
 
-                                  <div class="form-group">
-                                      <label class="label">Nombre</label>
-                                      <input required autocomplete="off" name="nombre" class="form-control"
-                                             type="text" placeholder="Nombre">
+                                                     </tbody>
+                                                     <tfoot>
+                                                      <tr>
+                                                                      <td colspan="3" align="right">&nbsp;</td>
+                                                      </tr>
+                                                     </tfoot>
+                                                   </table>
+                                           </div>
+                                      </div>
+                                      <button class="btn btn-success" >Registrar</button>
                                   </div>
-                                  <div class="form-group">
-                                      <label class="label">Descripción</label>
-                                      <input required autocomplete="off" name="descripcion" class="form-control"
-                                             type="text" placeholder="Descripción">
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="label">Creador</label>
-                                      <input required autocomplete="off" name="creador" class="form-control"
-                                             type="text" placeholder="Creador">
-                                  </div>
-
-                                  <div class="form-group">
-                                  <label class="label">Imagen del producto</label>
-                                  <input type="file" name="imagen" class="form-control" placeholder="imagen" >
-                                  </div>
-
-                                  <div class="form-group">
-                                    <label class="label">Stock</label>
-                                 <div class="table-responsive">
-                                      <table class="table table-bordered table-striped" id="user_table">
-                                           <thead>
-                                            <tr>
-                                                <th width="35%">Contenido</th>
-                                                <th width="35%">Precio</th>
-                                                <th width="30%">Stock</th>
-                                            </tr>
-                                           </thead>
-                                           <tbody>
-
-                                           </tbody>
-                                           <tfoot>
-                                            <tr>
-                                                            <td colspan="3" align="right">&nbsp;</td>
-                                            </tr>
-                                           </tfoot>
-                                         </table>
-                                 </div>
-
-                                 </div>
-                                  <button class="btn btn-success" onclick="location.href=''/home'" >Registrar</button>
-                                      &nbsp;
-                              </form>
-                          </div>
-                      </div>
-
+                              </div>
+                        </form>
+                          &nbsp;
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -91,9 +84,9 @@ $(document).ready(function(){
  function dynamic_field(number)
  {
   html = '<tr>';
-        html += '<td><input type="text" name="contenido['+count+']" class="form-control" placeholder="Contenido"/></td>';
-        html += '<td><input type="text" name="precio['+count+']" class="form-control" placeholder="Precio"/></td>';
-        html += '<td><input type="text" name="disponibles['+count+']" class="form-control" placeholder="Disponibles"/></td>';
+        html += '<td><input required type="number" min="0" name="contenido['+count+']" class="form-control" placeholder="Contenido"/></td>';
+        html += '<td><input required type="number" min="0" name="precio['+count+']" class="form-control" placeholder="Precio"/></td>';
+        html += '<td><input required type="number" min="0" name="disponibles['+count+']" class="form-control" placeholder="Disponibles"/></td>';
         if(number > 1)
         {
             $('tbody').append(html);

@@ -2,13 +2,26 @@
 
 @section('content')
 <div>
-  <button class="btn btn-success" onclick="location.href='/producto/registrar'" >Añadir producto</button>
-  <button class="btn btn-success" onclick="location.href='/producto/editar'" >Editar producto</button>
-  <button class="btn btn-success" onclick="location.href='/diseniador/crear'" >Añadir diseñador</button>
+  {{Auth::user()->name}}
+  {{Auth::user()->roles}}
+  <?php
+    $admin= $user->roles ;
+    if ($admin=="Administrador"){
+    ?>
+      <div>
+      <td>
+      <button class="btn btn-success" onclick="location.href='/producto/registrar'" >Añadir producto</button>
+      <td>
+      </div>
+    <?php
+    }
+    ?>
 </div>
 <div class="">
   <?php
-  $productos=DB::table('productos')->orderBy('created_at','desc')->get();
+  $productos=DB::table('productos')->orderBy('updated_at','desc')->get();
+
+
           // dd($productos);
           ?>
 
@@ -19,14 +32,24 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Creador</th>
-                <th scope="col">Contenido</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Stock</th>
+                <th scope="col"></th>
+                <?php
+                  if ($admin){
+                ?>
+
+                    <th scope="col"></th>
+                <?php
+                 }
+                ?>
+
               </tr>
             </thead>
 
        <?php
           foreach($productos as $prod){
+          $stock=DB::table('stock')->orderBy('contenido','desc')->where('producto_id','=',$prod->id)->get();
+          // $stock=DB::table('stock')->orderBy('created_at','desc')->get();
+          // dd($stock);
        ?>
             <tr>
               <td>
@@ -35,31 +58,64 @@
               <th scope="row">{{$prod->nombre}}</th>
               <td>{{$prod->descripcion}}</td>
               <td>{{$prod->creador}}</td>
-            
+              <td>
+
+                <table class="table">
+
+                    <tr>
+                        <th scope="col" class="table-primary">Contenido</th>
+                        <th scope="col" class="table-primary">Precio</th>
+                        <th scope="col" class="table-primary">Disponibles</th>
+                    </tr>
+                <?php
+                    foreach($stock as $item){
+                ?>
+
+                    <tr>
+                        <th scope="col">{{$item->contenido}}</th>
+                        <th scope="col">{{$item->precio}}</th>
+                        <th scope="col">{{$item->disponibles}}</th>
+                        <?php
+                            if ($item->disponibles >= 1){
+                        ?>
+                        <th> <button class="btn btn-success" onclick="location.href='/producto/vender/?id_item={{$item->id}}'" >Vender producto</button></th>
+                        <?php
+                        }
+                        ?>
+                    </tr>
+
+                <?php
+                  }
+                ?>
+                </table>
+
+              </td>
+              <?php
+
+                if ($admin=="Administrador"){
+                ?>
+
+              <td>
+                  <button class="btn btn-success" onclick="location.href='/producto/modificar/?id_prod={{$prod->id}}'" >Editar producto</button>
+              </td>
+              <?php
+               }
+              ?>
+
             </tr>
       <?php
       }
       ?>
-      <!-- <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody> -->
+
     </table>
 </div>
+
+<script type="application/javascript">
+
+$(document).ready(function(){
+  if(!window.location.href.includes('/home')){
+    window.location.assign('/home');}
+});
+</script>
+
 @endsection
