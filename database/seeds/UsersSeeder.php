@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('asdasdas'),
                 'edad' => 18,
                 'roles' => 'Administrador',
+                'api_token' => Str::random(60),
             ]);
           }catch (Exception $e) {};
           try{
@@ -27,8 +28,9 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('asdasdas'),
                 'edad' => 20,
                 'roles' => 'Vendedor',
+                'api_token' => Str::random(60),
             ]);
-          }catch (Exception $e) {};  
+          }catch (Exception $e) {};
 
     }
 }

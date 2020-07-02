@@ -145,11 +145,15 @@ class ProductoController extends Controller
          ]);
 
        }
-       $this->redirectToRoute('/home');
        $user=Auth::user();
        return view('home')->with('user', $user);
 
     }
+
+    public function show($id)
+   {
+       //
+   }
 
 
 }
