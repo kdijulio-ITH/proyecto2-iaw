@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(["middleware" => 'apikey.validate'], function () {
+
+  //Rutas
+  Route::resource('/productos', 'ProductoController');
+
+
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
