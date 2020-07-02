@@ -150,9 +150,10 @@ class ProductoController extends Controller
 
     }
 
-    public function show($id)
+    public function show(Request $id)
    {
-       //
+       $producto = DB::table('productos')->where('id','=',$id);
+       return $producto;
    }
 
 

@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes();
+
+
 Route::get('', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::post('/producto/registrar','ProductoController@registrar_producto_BD')->middleware('auth');
@@ -26,3 +27,5 @@ Route::get('/producto/modificar','ProductoController@modificar_producto')->name(
 Route::post('/producto/modificar','ProductoController@modificar_producto_BD')->name('edit')->middleware('auth');
 
 Route::get('/producto/vender','ProductoController@vender_producto')->name('vender')->middleware('auth');
+
+Auth::routes();
