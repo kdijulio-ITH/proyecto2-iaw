@@ -9,6 +9,7 @@ use DB;
 use App\Producto;
 use App\Stock;
 use Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -82,14 +83,24 @@ class ProductoController extends Controller
 
         $avatar=$request->file('imagen');
         $filename=time() . '.' . $avatar->getClientOriginalExtension();
-        $path = Storage::disk('public')->put('uploads/', $filename);
-        Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+        $disco = Storage::disk('public')->put('storage/', $filename);
+        $path = 'storage'."/".$filename;
+        $asd = Image::make($avatar->getRealPath())->resize(250,250)->save($path);
 
+
+        // $avatar=$request->file('imagen');
+        // $filename=time() . '.' . $avatar->getClientOriginalExtension();
+        // Storage::disk('public')->put('storage/', $filename);
+        // $path = 'storage'."/".$filename;
+        // $asd = Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+        // dd($avatar,$filename,$asd,$path );
 
       }
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['nombre' => $request['nombre']]);
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['descripcion' => $request['descripcion']]);
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['creador' => $request['creador']]);
+      DB::table('productos')->where('id','=',$request['id_prod'])->update(['imagen' => $filename]);
+
 
 
       $id_stock = $request->id_stock;
@@ -129,14 +140,17 @@ class ProductoController extends Controller
       // $path = public_path('storage')."/".$filename;
       // Image::make($avatar->getRealPath())->resize(250,250)->save($path);
 
-
+      // $avatar=$request->file('imagen');
+      // $filename=time() . '.' . $avatar->getClientOriginalExtension();
+      // $path = Storage::disk('public')->put('storage/', $filename);
+      // Image::make($avatar->getRealPath())->resize(250,250)->save($path);
 
       $avatar=$request->file('imagen');
       $filename=time() . '.' . $avatar->getClientOriginalExtension();
-      $path = Storage::disk('public')->put('uploads/', $filename);
-      Image::make($avatar->getRealPath())->resize(250,250)->save($path);
-
-
+      $disco = Storage::disk('public')->put('storage/', $filename);
+      $path = 'storage'."/".$filename;
+      $asd = Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+      // dd($avatar,$filename,$disco ,$asd,$path);
 
 
        $producto = Producto::create([
