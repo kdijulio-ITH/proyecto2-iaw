@@ -86,7 +86,7 @@ class ProductoController extends Controller
         $disco = Storage::disk('public')->put('storage/', $filename);
         $path = 'storage'."/".$filename;
         $asd = Image::make($avatar->getRealPath())->resize(250,250)->save($path);
-
+        DB::table('productos')->where('id','=',$request['id_prod'])->update(['imagen' => $filename]);
 
         // $avatar=$request->file('imagen');
         // $filename=time() . '.' . $avatar->getClientOriginalExtension();
@@ -99,7 +99,7 @@ class ProductoController extends Controller
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['nombre' => $request['nombre']]);
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['descripcion' => $request['descripcion']]);
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['creador' => $request['creador']]);
-      DB::table('productos')->where('id','=',$request['id_prod'])->update(['imagen' => $filename]);
+
 
 
 
