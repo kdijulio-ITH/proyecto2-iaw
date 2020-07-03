@@ -2,8 +2,7 @@
 
 @section('content')
 <div>
-  {{Auth::user()->name}}
-  {{Auth::user()->roles}}
+
   <?php
     $admin= $user->roles ;
     if ($admin=="Administrador"){
@@ -32,7 +31,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Creador</th>
-                <th scope="col"></th>
+                <th scope="col">Detalle</th>
                 <?php
                   if ($admin){
                 ?>
