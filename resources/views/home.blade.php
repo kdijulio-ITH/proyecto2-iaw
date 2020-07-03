@@ -53,7 +53,7 @@
        ?>
             <tr>
               <td>
-                <img src="/storage/{{$prod->imagen}}" style="width:100px; height: 100px;float: left;border-radius: 80%; margin-right: 20px ">
+                <img src="{{$prod->imagen}}" style="width:100px; height: 100px;float: left;border-radius: 80%; margin-right: 20px ">
               </td>
               <th scope="row">{{$prod->nombre}}</th>
               <td>{{$prod->descripcion}}</td>
