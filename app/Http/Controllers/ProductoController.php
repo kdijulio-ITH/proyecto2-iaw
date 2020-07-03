@@ -72,11 +72,19 @@ class ProductoController extends Controller
     protected function modificar_producto_BD(Request $request)
     {
 
+
+
       if($request->hasFile('imagen')){
+        // $avatar=$request->file('imagen');
+        // $filename=time() . '.' . $avatar->getClientOriginalExtension();
+        // $path = public_path('storage')."/".$filename;
+        // Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+
         $avatar=$request->file('imagen');
         $filename=time() . '.' . $avatar->getClientOriginalExtension();
-        $path = public_path('storage')."/".$filename;
+        $path = Storage::disk('public')->put('uploads/', $filename);
         Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+
 
       }
       DB::table('productos')->where('id','=',$request['id_prod'])->update(['nombre' => $request['nombre']]);
@@ -116,10 +124,20 @@ class ProductoController extends Controller
     {
 
       if($request->hasFile('imagen')){
+      // $avatar=$request->file('imagen');
+      // $filename=time() . '.' . $avatar->getClientOriginalExtension();
+      // $path = public_path('storage')."/".$filename;
+      // Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+
+
+
       $avatar=$request->file('imagen');
       $filename=time() . '.' . $avatar->getClientOriginalExtension();
-      $path = public_path('storage')."/".$filename;
+      $path = Storage::disk('public')->put('uploads/', $filename);
       Image::make($avatar->getRealPath())->resize(250,250)->save($path);
+
+
+
 
        $producto = Producto::create([
             'nombre' => $request['nombre'],
