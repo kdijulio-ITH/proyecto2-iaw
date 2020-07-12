@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Storage;
 class ApiProductoController extends Controller
 {
 
-  // public function __construct()
-  // {
-  //     $this->middleware('auth:api');
-  // }
-  // 
-    public function show(Request $request)
+  public function __construct()
+  {
+      $this->middleware('api');
+  }
+
+    public function showPerfumes(Request $request)
     {
       $prod=DB::table('productos')->get();
       return response()->json($prod);
