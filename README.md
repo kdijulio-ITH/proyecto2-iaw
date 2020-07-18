@@ -11,3 +11,11 @@ tab2:
 php artisan migrate:fresh
 php artisan db:seed
 php artisan passport:install
+
+git status
+git add .
+git commit -m "sdasd" 
+git push origin master API
+git checkout master
+git pull
+git push heroku master

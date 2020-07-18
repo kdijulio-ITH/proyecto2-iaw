@@ -20,6 +20,17 @@ class ApiProductoController extends Controller
 
     public function showPerfumes(Request $request)
     {
+      
+      $request->validate([
+          'email'       => 'required|string|email',
+          'password'    => 'required|string',
+          'remember_me' => 'boolean',
+      ]);
+      $credentials = request(['email', 'password']);
+      if (!Auth::attempt($credentials)) {
+          return response()->json([
+              'message' => 'Unauthorized'], 401);
+      }
       $prod=DB::table('productos')->get();
       return response()->json($prod);
 
