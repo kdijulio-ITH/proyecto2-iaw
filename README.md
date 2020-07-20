@@ -14,8 +14,10 @@ php artisan passport:install
 
 git status
 git add .
-git commit -m "sdasd" 
+git commit -m "sdasd"
 git push origin master API
 git checkout master
 git pull
 git push heroku master
+
+npm run dev
