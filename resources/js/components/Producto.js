@@ -59,7 +59,7 @@ const ListStock = (props) => (
 
 
 )
-export default class Saludo extends React.Component {
+export default class Producto extends React.Component {
   constructor() {
       super();
 
@@ -106,7 +106,7 @@ export default class Saludo extends React.Component {
 
                   </tr>
                     {this.state.showComponent ?
-                      <Child message={this.state.value}></Child> :
+                      <Stock message={this.state.value}></Stock> :
                        null
                     }
                   </div>
@@ -123,7 +123,7 @@ export default class Saludo extends React.Component {
 }
 
 
-class Child extends React.Component {
+class Stock extends React.Component {
   constructor() {
       super();
       this.state = {
@@ -156,6 +156,6 @@ class Child extends React.Component {
   }
 }
 
-if (document.getElementById('saludo')) {
-    ReactDOM.render(<Saludo />, document.getElementById('saludo'));
+if (document.getElementById('producto')) {
+    ReactDOM.render(<Producto />, document.getElementById('producto'));
 }

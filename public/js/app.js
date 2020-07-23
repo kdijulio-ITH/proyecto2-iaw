@@ -65755,7 +65755,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
-__webpack_require__(/*! ./components/Saludo */ "./resources/js/components/Saludo.js"); // require('./components/Class2');
+__webpack_require__(/*! ./components/Producto */ "./resources/js/components/Producto.js"); // require('./components/Class2');
 
 /***/ }),
 
@@ -65862,16 +65862,16 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Saludo.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Saludo.js ***!
-  \*******************************************/
+/***/ "./resources/js/components/Producto.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Producto.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Saludo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Producto; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -65953,15 +65953,15 @@ var ListStock = function ListStock(props) {
   }));
 };
 
-var Saludo = /*#__PURE__*/function (_React$Component) {
-  _inherits(Saludo, _React$Component);
+var Producto = /*#__PURE__*/function (_React$Component) {
+  _inherits(Producto, _React$Component);
 
-  var _super = _createSuper(Saludo);
+  var _super = _createSuper(Producto);
 
-  function Saludo() {
+  function Producto() {
     var _this;
 
-    _classCallCheck(this, Saludo);
+    _classCallCheck(this, Producto);
 
     _this = _super.call(this);
     _this.state = {
@@ -65976,7 +65976,7 @@ var Saludo = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(Saludo, [{
+  _createClass(Producto, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -66022,7 +66022,7 @@ var Saludo = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         "class": "btn btn-success",
         onClick: this._onButtonClick
-      }, this.state.button)), this.state.showComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Child, {
+      }, this.state.button)), this.state.showComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Stock, {
         message: this.state.value
       }) : null), this.state.done ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, {
         items: this.state.items
@@ -66030,20 +66030,20 @@ var Saludo = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return Saludo;
+  return Producto;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
 
-var Child = /*#__PURE__*/function (_React$Component2) {
-  _inherits(Child, _React$Component2);
+var Stock = /*#__PURE__*/function (_React$Component2) {
+  _inherits(Stock, _React$Component2);
 
-  var _super2 = _createSuper(Child);
+  var _super2 = _createSuper(Stock);
 
-  function Child() {
+  function Stock() {
     var _this3;
 
-    _classCallCheck(this, Child);
+    _classCallCheck(this, Stock);
 
     _this3 = _super2.call(this);
     _this3.state = {
@@ -66053,7 +66053,7 @@ var Child = /*#__PURE__*/function (_React$Component2) {
     return _this3;
   }
 
-  _createClass(Child, [{
+  _createClass(Stock, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this4 = this;
@@ -66076,11 +66076,11 @@ var Child = /*#__PURE__*/function (_React$Component2) {
     }
   }]);
 
-  return Child;
+  return Stock;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-if (document.getElementById('saludo')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Saludo, null), document.getElementById('saludo'));
+if (document.getElementById('producto')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Producto, null), document.getElementById('producto'));
 }
 
 /***/ }),
