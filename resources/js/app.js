@@ -13,5 +13,5 @@ require('./bootstrap');
  */
 
 require('./components/Example');
-require('./components/Saludo');
+require('./components/Producto');
 // require('./components/Class2');
