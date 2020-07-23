@@ -42,6 +42,14 @@ class Productos extends Component {
     }
 }
 
+class Child extends React.Component {
+    render() {
+        return <h1>{this.props.message}</h1>
+    }
+}
+
+
+
 export default Productos
 
 if (document.getElementById('productos')) {

@@ -14,3 +14,4 @@ require('./bootstrap');
 
 require('./components/Example');
 require('./components/Saludo');
+// require('./components/Class2');

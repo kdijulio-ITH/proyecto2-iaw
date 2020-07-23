@@ -9,8 +9,7 @@
 
   </head>
   <body>
-    <!-- <saludo> asd </saludo> -->
-     <div id="saludo">
+     <div id='saludo'>
      </div>
 
      <script src="{{ asset('js/app.js')}}" defer></script>

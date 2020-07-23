@@ -65755,7 +65755,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
-__webpack_require__(/*! ./components/Saludo */ "./resources/js/components/Saludo.js");
+__webpack_require__(/*! ./components/Saludo */ "./resources/js/components/Saludo.js"); // require('./components/Class2');
 
 /***/ }),
 
@@ -65829,22 +65829,12 @@ __webpack_require__.r(__webpack_exports__);
 //   }
 
 function Example() {
-  //   this.state = {
-  //   productos : null
-  // };
-  var data = fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas').then(function (response) {
-    return response.json();
-  }); // .then((producto) => {
-  //   this.setState({ productos: producto })
-  // })
-
-  console.log(data); //   if (this.state.productos.length > 0) {
-  //     return <p className="text-center">Cargando empleadosasdasdasd.</p>
+  // var data = fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
+  //   .then((response) => {
+  //     return response.json()
+  //   })
   //
-  // } else {
-  //   return <p className="text-center">Cargando empleados...</p>
-  // }
-
+  // console.log(data);
   return (
     /*#__PURE__*/
     // const promise = fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas', "");
@@ -65886,6 +65876,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Example__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Example */ "./resources/js/components/Example.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65909,37 +65900,61 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // componentWillMount() {
-//     fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
-//       .then((response) => {
-//         return response.json()
-//       })
-//       .then((productos) => {
-//         this.setState({ productos: productos })
-//       })
-//   }
+
+
+
+function manejarEvento() {
+  // render () {
+  // return (
+  window.alert("Se registro una venta"); // )
+  // }
+}
 
 var List = function List(props) {
-  return (
-    /*#__PURE__*/
-    // <ul>
-    // {
-    //     props.items.map => {
-    //         return <div>hola  </div>
-    //     })
-    //
-    // }
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "col"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Mi Stock"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Nombres de productos"), props.items.map(function (producto) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, producto.nombre);
-    })) // </ul>
-
-  );
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
+    className: "thead-dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Creador"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Descripcion"))), props.items.map(function (producto) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      scope: "row"
+    }, producto.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      scope: "row"
+    }, producto.nombre), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, producto.creador), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, producto.descripcion));
+  }));
 };
 
-var Saludo = /*#__PURE__*/function (_Component) {
-  _inherits(Saludo, _Component);
+var ListStock = function ListStock(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
+    className: "thead-dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Contenido"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Precio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Disponibles"))), props.items.map(function (producto) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      scope: "row"
+    }, producto.contenido), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, producto.precio), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, producto.disponibles), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      "class": "btn btn-success",
+      onClick: manejarEvento
+    }, "VENDER")));
+  }));
+};
+
+var Saludo = /*#__PURE__*/function (_React$Component) {
+  _inherits(Saludo, _React$Component);
 
   var _super = _createSuper(Saludo);
 
@@ -65950,9 +65965,14 @@ var Saludo = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this);
     _this.state = {
+      showComponent: false,
+      value: 1,
       done: false,
+      button: "Mostrar detalles de stock",
       items: []
     };
+    _this._onButtonClick = _this._onButtonClick.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -65971,19 +65991,93 @@ var Saludo = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "_onButtonClick",
+    value: function _onButtonClick() {
+      this.state.showComponent ? this.setState({
+        showComponent: false,
+        button: "Mostrar detalles de stock"
+      }) : this.setState({
+        showComponent: true,
+        button: "Ocultar detalles de stock"
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        value: event.target.value
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.done ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        required: true,
+        type: "number",
+        min: "0",
+        onChange: this.handleChange,
+        name: "ID_PROD",
+        "class": "form-control",
+        placeholder: "ID del producto"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "btn btn-success",
+        onClick: this._onButtonClick
+      }, this.state.button)), this.state.showComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Child, {
+        message: this.state.value
+      }) : null), this.state.done ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, {
         items: this.state.items
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cargando resultados..."));
     }
   }]);
 
   return Saludo;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]); // export defsault Saludo;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
 
+var Child = /*#__PURE__*/function (_React$Component2) {
+  _inherits(Child, _React$Component2);
+
+  var _super2 = _createSuper(Child);
+
+  function Child() {
+    var _this3;
+
+    _classCallCheck(this, Child);
+
+    _this3 = _super2.call(this);
+    _this3.state = {
+      done: false,
+      items: []
+    };
+    return _this3;
+  }
+
+  _createClass(Child, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this4 = this;
+
+      fetch('http://127.0.0.1:8000/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message).then(function (result) {
+        return result.json();
+      }).then(function (items) {
+        return _this4.setState({
+          done: true,
+          items: items
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Mostrando detalles del producto con ID: ", this.props.message), this.state.done ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListStock, {
+        items: this.state.items
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cargando resultados..."));
+    }
+  }]);
+
+  return Child;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 if (document.getElementById('saludo')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Saludo, null), document.getElementById('saludo'));

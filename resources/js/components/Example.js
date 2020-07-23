@@ -12,24 +12,13 @@ import ReactDOM from 'react-dom';
 //       })
 //   }
 function Example() {
-        //   this.state = {
-        //   productos : null
-        // };
-        var data = fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
-          .then((response) => {
-            return response.json()
-          })
 
-          // .then((producto) => {
-          //   this.setState({ productos: producto })
-          // })
-        console.log(data);
-        //   if (this.state.productos.length > 0) {
-        //     return <p className="text-center">Cargando empleadosasdasdasd.</p>
+        // var data = fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
+        //   .then((response) => {
+        //     return response.json()
+        //   })
         //
-        // } else {
-        //   return <p className="text-center">Cargando empleados...</p>
-        // }
+        // console.log(data);
 
 
 
