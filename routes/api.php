@@ -11,3 +11,4 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
   Route::get('productos/showPerfumes', 'ApiProductoController@showPerfumes');
+  Route::get('productos/showStock', 'ApiProductoController@showStock');
