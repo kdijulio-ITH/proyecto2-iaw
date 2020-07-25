@@ -75,7 +75,7 @@ export default class Producto extends React.Component {
   }
 
   componentDidMount() {
-      fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
+      fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas')
       .then(result=>result.json())
       .then(items=>this.setState({
           done: true,
@@ -132,7 +132,7 @@ class Stock extends React.Component {
       };
   }
   componentDidMount() {
-      fetch('http://127.0.0.1:8000/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message)
+       fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message)
       .then(result=>result.json())
       .then(items=>this.setState({
           done: true,
