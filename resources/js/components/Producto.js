@@ -52,7 +52,7 @@ const ListStock = (props) => (
                   <th scope="row">{producto.contenido}</th>
                   <td>{producto.precio}</td>
                   <td>{producto.disponibles}</td>
-                  <td><button class="btn btn-success" onClick={manejarEvento}>VENDER</button></td>
+                  <td><button className="btn btn-success" onClick={manejarEvento}>VENDER</button></td>
                 </tr>
               )}
         </table>
@@ -100,11 +100,11 @@ export default class Producto extends React.Component {
 
               <div>
                   <div>
-                  <tr>
-                  <input required type="number" min="0" onChange={this.handleChange} name="ID_PROD" class="form-control" placeholder="ID del producto"/>
-                  <button class="btn btn-success" onClick={this._onButtonClick}>{this.state.button}</button>
+                  <td>
+                  <input required type="number" min="0" onChange={this.handleChange} name="ID_PROD" className="form-control" placeholder="ID del producto"/>
+                  <button className="btn btn-success" onClick={this._onButtonClick}>{this.state.button}</button>
 
-                  </tr>
+                  </td>
                     {this.state.showComponent ?
                       <Stock message={this.state.value}></Stock> :
                        null
