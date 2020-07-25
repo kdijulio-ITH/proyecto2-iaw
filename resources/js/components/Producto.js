@@ -132,7 +132,7 @@ class Stock extends React.Component {
       };
   }
   componentDidMount() {
-      fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message)
+       fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message)
       .then(result=>result.json())
       .then(items=>this.setState({
           done: true,
