@@ -65981,7 +65981,7 @@ var Producto = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('http://127.0.0.1:8000/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas').then(function (result) {
+      fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showPerfumes?email=vendedor@gmail.com&password=asdasdas').then(function (result) {
         return result.json();
       }).then(function (items) {
         return _this2.setState({
@@ -66058,7 +66058,7 @@ var Stock = /*#__PURE__*/function (_React$Component2) {
     value: function componentDidMount() {
       var _this4 = this;
 
-      fetch('http://127.0.0.1:8000/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message).then(function (result) {
+      fetch('https://proyecto-2-kevindijulio.herokuapp.com/api/productos/showStock?email=vendedor@gmail.com&password=asdasdas&producto_id=' + this.props.message).then(function (result) {
         return result.json();
       }).then(function (items) {
         return _this4.setState({
