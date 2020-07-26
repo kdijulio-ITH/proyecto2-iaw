@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 function manejarEvento () {
-   // render () {
-    // return (
     window.alert("Se registro una venta");
-    // )
-  // }
 }
 const List = (props) => (
 
