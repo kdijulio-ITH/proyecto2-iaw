@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Example from './Example';
 
 function manejarEvento () {
    // render () {
