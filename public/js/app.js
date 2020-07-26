@@ -61972,7 +61972,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -65758,7 +65758,7 @@ __webpack_require__(/*! ./components/Producto */ "./resources/js/components/Prod
 
 /***/ }),
 
-/***/ "./resources/js/bootstrap.js":
+/***/ "./resources/js/bootstrap.js": 
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
   \***********************************/
