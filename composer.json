@@ -12,8 +12,11 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "dev-master",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/passport": "^9.3",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -58,6 +61,8 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "post-install-cmd": [ "ln -sr storage/app/public public/storage" ]
+
     }
 }
