@@ -28,4 +28,8 @@ Route::post('/producto/modificar','ProductoController@modificar_producto_BD')->n
 
 Route::get('/producto/vender','ProductoController@vender_producto')->name('vender')->middleware('auth');
 
+
+Route::get('/spa', function () {
+    return view('spa');
+});
 Auth::routes();
